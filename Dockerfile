@@ -1,12 +1,11 @@
-
 FROM node:alpine
 
 WORKDIR /app
 
 COPY package.json /app
 
-RUN yarn install && yarn cache clean
+RUN npm install
 
 COPY . /app
 
-CMD ["yarn", "run", "build"]
+CMD ["npm", "start"]
